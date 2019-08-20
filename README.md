@@ -30,7 +30,7 @@ npm run serve
 ![在这里插入图片描述](https://s2.ax1x.com/2019/08/20/mJCj78.gif)
 
 ###  后台管理
-![在这里插入图片描述](https://s2.ax1x.com/2019/08/20/mJPC1s.gif)
+![在这里插入图片描述](https://s2.ax1x.com/2019/08/20/mJlDr8.gif)
 
 ## 有问题Question
 
