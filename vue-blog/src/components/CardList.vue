@@ -32,7 +32,7 @@ export default {
         },
         {
           title: 'Resume',
-          url: ''
+          url: 'http://pcs.baidu.com/rest/2.0/pcs/file?method=download&path=%2F%E9%80%84%E6%99%93%E9%BE%99%E5%89%8D%E7%AB%AF%E7%AE%80%E5%8E%86.pdf&random=0.2831764530915082&app_id=498065'
         }
       ]
     }
