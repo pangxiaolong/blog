@@ -18,8 +18,8 @@
         </el-menu-item>
         <el-menu-item index="3">
           <i class="el-icon-link"></i>
-          <span slot="title"
-            ><a href="https://github.com/pangxiaolong" target="_blank">源码</a>
+          <span slot="title">
+            <a href="https://github.com/pangxiaolong" target="_blank">源码</a>
           </span>
         </el-menu-item>
       </el-menu>
@@ -31,7 +31,8 @@
             <blog-list></blog-list>
           </div>
           <div class="content-right">
-            <card-list></card-list>
+            <card-list style="margin-top:40px"></card-list>
+            <plan-list :plan="planList"></plan-list>
           </div>
         </div>
       </transition>
@@ -45,40 +46,59 @@
     <footer class="footer-inner">
       <p>Copyright© Author龙小胖 xiaolong.pang@vip.163.com</p>
       <p>
-        <a href="https://github.com/pangxiaolong" target="_blank">GitHub</a
-        >&nbsp;&nbsp;&nbsp;&nbsp;<a
-          href="https://me.csdn.net/weixin_42275932"
-          target="_blank"
-          >CSDN</a
-        >
+        <a href="https://github.com/pangxiaolong" target="_blank">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://me.csdn.net/weixin_42275932" target="_blank">CSDN</a>
       </p>
     </footer>
   </div>
 </template>
 
 <script>
-import BlogList from '../components/BlogList.vue'
-import CardList from '../components/CardList.vue'
-import AboutMe from '../components/AboutMe.vue'
+import BlogList from "../components/BlogList.vue";
+import PlanList from "../components/PlanList.vue";
+import CardList from "../components/CardList.vue";
+import AboutMe from "../components/AboutMe.vue";
+import { getPlanList } from "../api/api";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     BlogList,
+    PlanList,
     CardList,
     AboutMe
   },
-  data () {
+  data() {
     return {
-      activeIndex: '1'
-    }
+      activeIndex: "1",
+      planList: {}
+    };
+  },
+  created() {
+    this.getPlan();
   },
   methods: {
-    menuSelect (index) {
+    menuSelect(index) {
       // eslint-disable-next-line no-unused-expressions
-      index !== '3' ? (this.activeIndex = index) : null
+      index !== "3" ? (this.activeIndex = index) : null;
+    },
+    getPlan() {
+      const that = this;
+      getPlanList()
+        .then(res => {
+          if (res.code === 20000) {
+            that.planList = res.data;
+          } else {
+            that.$message.error({
+              message: res.message
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
-}
+};
 </script>
 
 <style scoped lang="less">
@@ -116,6 +136,8 @@ export default {
   }
   .content-right {
     float: right;
+    display: flex;
+    flex-direction: column-reverse;
     max-width: 300px !important;
     padding-top: 20px;
   }

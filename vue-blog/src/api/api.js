@@ -7,5 +7,12 @@ export const getClassify = params => {
   return axios.get(`${baseURL}/classify/getClassify`, params).then(res => res.data)
 }
 export const getNote = params => {
-  return axios.get(`${baseURL}/note/getNote`, { params }).then(res => res.data)
+  return axios.get(`${baseURL}/note/getNote`, {
+    params
+  }).then(res => res.data)
+}
+export const getPlanList = params => {
+  return axios.get(`${baseURL}/plan/getPlan`, {
+    params
+  }).then(res => res.data)
 }
