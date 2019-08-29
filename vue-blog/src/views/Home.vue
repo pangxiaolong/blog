@@ -136,6 +136,7 @@ export default {
   }
   .content-right {
     float: right;
+    height: 1200px;
     display: flex;
     flex-direction: column-reverse;
     max-width: 300px !important;
