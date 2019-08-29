@@ -1,6 +1,6 @@
 ## 介绍
 
-采用Vue+Egg.js+MySql开发的意见简易博客，第一次使用Node框架写后台和Sql，选了阿里基于koa2开源的Egg，后台管理基于vue-element-admin，前台展示部分自己写的，，后续会继续完善部分功能。
+采用Vue+Egg.js+MySql开发的简易博客，第一次使用Node框架写后台和Sql，选了阿里基于koa2开源的Egg，后台管理基于vue-element-admin，前台展示部分自己写的，，后续会继续完善部分功能。
 ## 安装Install
 
 ###  通过 npm 安装 
